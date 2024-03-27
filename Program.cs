@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using DemoLocalizationBlazorServer6.Data;
+using DemoLocalizationBlazorServer6.Data; // Asegúrate de que este namespace sea correcto
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Localization;
 using System.Globalization;
@@ -23,7 +23,13 @@ var supportedCultures = new[] { "en-US", "es-ES" };
 var localizationOptions = new RequestLocalizationOptions()
     .SetDefaultCulture("en-US")
     .AddSupportedCultures(supportedCultures)
-    .AddSupportedUICultures();
+    .AddSupportedUICultures(supportedCultures); // Asegúrate de pasar supportedCultures aquí también.
+
+// Configurar el CookieRequestCultureProvider como el primer proveedor
+localizationOptions.RequestCultureProviders.Insert(0, new CookieRequestCultureProvider()
+{
+    CookieName = CookieRequestCultureProvider.DefaultCookieName
+});
 
 var app = builder.Build();
 
@@ -35,15 +41,15 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseRequestLocalization(localizationOptions);
-
 app.UseHttpsRedirection();
-
-app.MapControllers();
 
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseRequestLocalization(localizationOptions); // Asegúrate de que esta llamada esté después de UseRouting() y antes de UseEndpoints() o MapBlazorHub().
+
+app.MapControllers();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");

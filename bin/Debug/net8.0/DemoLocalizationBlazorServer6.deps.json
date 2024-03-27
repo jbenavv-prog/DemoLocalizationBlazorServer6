@@ -12,6 +12,14 @@
         },
         "runtime": {
           "DemoLocalizationBlazorServer6.dll": {}
+        },
+        "resources": {
+          "en-US/DemoLocalizationBlazorServer6.resources.dll": {
+            "locale": "en-US"
+          },
+          "es-ES/DemoLocalizationBlazorServer6.resources.dll": {
+            "locale": "es-ES"
+          }
         }
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.1": {

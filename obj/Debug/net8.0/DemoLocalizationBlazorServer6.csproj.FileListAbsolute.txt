@@ -44,3 +44,4 @@ C:\Users\RentAdvisor\Documents\ASPNET\DemoLocalizationBlazorServer6\obj\Debug\ne
 C:\Users\RentAdvisor\Documents\ASPNET\DemoLocalizationBlazorServer6\obj\Debug\net8.0\en-US\DemoLocalizationBlazorServer6.resources.dll
 C:\Users\RentAdvisor\Documents\ASPNET\DemoLocalizationBlazorServer6\obj\Debug\net8.0\es-ES\DemoLocalizationBlazorServer6.resources.cs
 C:\Users\RentAdvisor\Documents\ASPNET\DemoLocalizationBlazorServer6\obj\Debug\net8.0\es-ES\DemoLocalizationBlazorServer6.resources.dll
+C:\Users\RentAdvisor\Documents\ASPNET\DemoLocalizationBlazorServer6\obj\Debug\net8.0\DemoLocalizationBlazorServer6.sourcelink.json

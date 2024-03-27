@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DemoLocalizationBlazorServer6")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute(" ")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82d9f02fff663e396e369ad5b8d42e5185cec979")]
 [assembly: System.Reflection.AssemblyProductAttribute("DemoLocalizationBlazorServer6")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DemoLocalizationBlazorServer6")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
