@@ -1,0 +1,58 @@
+﻿@inherits LayoutComponentBase
+@using System.Globalization
+@inject NavigationManager Navigation
+@using Microsoft.AspNetCore.WebUtilities;
+
+
+<PageTitle>DemoLocalizationBlazorServer6</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            <select @bind="Culture">
+                <option value="en-US">English</option>
+                <option value="es-ES">Spanish</option>
+            </select>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+@code
+{
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("OnInitialized");
+        Culture = CultureInfo.CurrentCulture;
+        Console.WriteLine(Culture);
+    }
+
+    private CultureInfo Culture
+    {
+        get
+        {
+            return CultureInfo.CurrentCulture;
+        }
+        set
+        {
+            if (CultureInfo.CurrentCulture != value)
+            {
+                var uri = new Uri(Navigation.Uri).GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+                var cultureEscaped = Uri.EscapeDataString(value.Name);
+                var uriEscaped = Uri.EscapeDataString(uri);
+                Console.WriteLine("Culture");
+                Navigation.NavigateTo($"Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}", forceLoad: true);
+            }
+        }
+    }
+
+
+}
